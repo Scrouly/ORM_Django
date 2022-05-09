@@ -1,7 +1,8 @@
 from datetime import date
-from django.utils import timezone
+
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 
 # Create your models here.
@@ -9,8 +10,8 @@ from django.urls import reverse
 class Groups(models.Model):
     name = models.CharField(db_column='Name', unique=True, max_length=50)
     code = models.AutoField(db_column='Code', primary_key=True)
-    data = models.DateField(db_column='Data')
-    curriculum_code = models.OneToOneField('Curriculum', models.SET_NULL, null=True)
+    data = models.DateField(db_column='Data', default=date.today)
+    curriculum_code = models.OneToOneField('Curriculum', models.SET_NULL, blank=True, null=True)
     status = models.CharField(db_column='Status', max_length=50, blank=True, null=True,
                               default="created")
     status_date = models.DateField(db_column='Status Date', blank=True, null=True,

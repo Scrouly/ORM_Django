@@ -1,0 +1,26 @@
+[
+  {
+    "model": "univerce.groups",
+    "pk": 1,
+    "fields": {
+      "name": "It-1",
+      "curriculum_code": 1
+    }
+  },
+  {
+    "model": "univerce.groups",
+    "pk": 2,
+    "fields": {
+      "name": "A-1",
+      "curriculum_code": 2
+    }
+  },
+  {
+    "model": "univerce.groups",
+    "pk": 3,
+    "fields": {
+      "name": "Km-1",
+      "curriculum_code": 3
+    }
+  }
+]
