@@ -1,0 +1,37 @@
+{% extends 'labs/base.html'%}
+
+{% block title%} Задание 2 {% endblock %}
+
+
+{% block content%}
+<h2>Учебные планы</h2>
+<ul>
+    {% for col in subject_plan %}
+    <li> Учебный план № {{col.id}}
+        <ul>
+            <li>Предмет 1: {{col.subject_one}}
+                <ul>
+                    <li>Количество часов: {{col.subject_one_hours}}</li>
+                </ul>
+            </li>
+            <li>Предмет 2: {{col.subject_two}}
+                <ul>
+                    <li>Количество часов: {{col.subject_two_hours}}</li>
+                </ul>
+            </li>
+            <li>Предмет 3: {{col.subject_three}}
+                <ul>
+                    <li>Количество часов: {{col.subject_three_hours}}</li>
+                </ul>
+            </li>
+            <li>Предмет 4: {{col.subject_four}}
+                <ul>
+                    <li>Количество часов: {{col.subject_four_hours}}</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    {% endfor %}
+</ul>
+{% endblock %}

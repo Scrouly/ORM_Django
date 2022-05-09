@@ -1,0 +1,28 @@
+{% extends 'labs/base.html'%}
+
+{% block title%} Задание 3 {% endblock %}
+
+
+{% block content%}
+<h2>Список добавленных студентов</h2>
+<ul>
+    {% for student in added_students_list %}
+    <li>Ф.И.О - {{ student.surname }} {{ student.name }} {{ student.patronymic }}</a>
+        <ul>
+            <li>Номер группы: {{student.group_code}}</li>
+            <li>Номер зачётки: {{student.record_book_number}}</li>
+            <li>Место проживания: {{student.city}}
+                <ul>
+                    <li>
+                        Домашний адресс: {{student.address}}
+                    </li>
+                    <li>
+                        Номер телефона: {{student.telephone}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'labs/base.html'%}
+
+{% block title%} Задание 2 {% endblock %}
+
+
+{% block content%}
+<h2>Учебный планы для групп</h2>
+<ul>
+    {% for group in all_groups %}
+    <li> Учебный план № {{group.curriculum_code}} соответствует группе {{group.name}}
+    </li>
+    {% endfor %}
+    {% for group in groups %}
+     <li> Для группы {{group.name}} был добавлен учебный план № {{group.curriculum_code}}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

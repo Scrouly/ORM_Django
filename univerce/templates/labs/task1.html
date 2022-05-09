@@ -1,0 +1,31 @@
+
+{% extends 'labs/base.html'%}
+
+
+{% block title%} Задание 1 {% endblock %}
+
+
+{% block content%}
+    <h2>Отчисленные студенты</h2>
+    <ul>
+        {% for student in students %}
+            <li>Ф.И.О -<a href ="{{student.get_url}}"> {{ student.surname }} {{ student.name }} {{ student.patronymic }}</a>
+                <ul>
+                    <li>Номер группы: {{student.group_code}}</li>
+                    <li>Номер зачётки: {{student.record_book_number}}</li>
+                    <li>Дата отчисления: {{student.status_date}}</li>
+                </ul>
+            </li>
+
+        {% endfor %}
+
+    </ul>
+    <h2>Последний отчисленный студент</h2>
+        <ul>
+            {% for student in last_stud %}
+            <li>
+                Ф.И.О -<a href ="{{student.get_url}}"> {{ student.surname }} {{ student.name }} {{ student.patronymic }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+{% endblock %}

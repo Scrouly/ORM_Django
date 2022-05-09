@@ -1,0 +1,28 @@
+{% extends 'labs/base.html'%}
+
+
+{% block title%} Информация о студенте {% endblock %}
+
+
+{% block content%}
+<h2>Информация о студенте</h2>
+<div>
+    <li>Ф.И.О - {{ student.surname }} {{ student.name }} {{ student.patronymic }}</a>
+        <ul>
+            <li>Номер группы: {{student.group_code}}</li>
+            <li>Номер зачётки: {{student.record_book_number}}</li>
+            <li>Место проживания: {{student.city}}
+                <ul>
+                    <li>
+                        Домашний адресс: {{student.address}}
+                    </li>
+                    <li>
+                        Номер телефона: {{student.telephone}}
+                    </li>
+                </ul>
+            </li>
+            <li>Cтатус: {{student.status}} {{student.status_date}}</li>
+        </ul>
+    </li>
+</div>
+{% endblock %}
